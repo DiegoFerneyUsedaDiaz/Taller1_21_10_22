@@ -3,13 +3,15 @@
     header('Content-Type: application/json; charset=utf-8');
 
 
-    //"Desarrolle un algoritmo que realice la sumatoria de los números enteros comprendidos entre el 1 y el 1O, es
-   // decir, 1 + 2 + 3 + .... + 1O."
+    //2. Determinar la hipotenusa de un triángulo rectángulo conocidas las longitudes de sus dos catetos. Desarrolle
+    //el algoritmo correspondiente. Formula: (HIP = √CATa + √CATb)
 
-    $suma = 1+2+3+4+5+6+7+8+9+10;
+    $catetoA = 4;
+    $catetoB = 9;
+    $hipotenusa = sqrt ($catetoA) + sqrt ($catetoB);
 
     $obj = (object) [
-        "Resultado" => "La sumatoria de los números enteros es : $suma",  
+        "Resultado" => "La hipotenusa de triangulo con longitud a=4 y b=9 es : $hipotenusa",  
         "Mensaje" => "Servidor Origen" .$_SERVER["HTTP_HOST"]
 
     ];
