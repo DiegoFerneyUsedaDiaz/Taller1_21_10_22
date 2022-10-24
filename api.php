@@ -3,15 +3,23 @@
     header('Content-Type: application/json; charset=utf-8');
 
 
-    //2. Determinar la hipotenusa de un triángulo rectángulo conocidas las longitudes de sus dos catetos. Desarrolle
-    //el algoritmo correspondiente. Formula: (HIP = √CATa + √CATb)
+    //3. Desarrolle un algoritmo que permita determinar el área lateral 
+    //y volumen de un cilindro dado su radio (R) y altura (H). Formula: (VOL = π * R^2 * H), (AREA_LATERAL = 2 * π * R * H)
 
-    $catetoA = 4;
-    $catetoB = 9;
-    $hipotenusa = sqrt ($catetoA) + sqrt ($catetoB);
+    $radio = 8;
+    $altura = 15;
+    $π = 3.141592;
+
+
+    $volumen = $π * $radio**2 * $altura ;
+    $areaLateral = 2* $π * $radio * $altura;
 
     $obj = (object) [
-        "Resultado" => "La hipotenusa de triangulo con longitud a=4 y b=9 es : $hipotenusa",  
+
+        "Tamaño Radio" => " $radio",
+        "Altura del Cilindro" => "$altura",
+        "Resultado Volumen" => "El volumen del Cilindro es : $volumen", 
+        "Resultado Area" => "El area lateral del Cilindro es : $areaLateral", 
         "Mensaje" => "Servidor Origen" .$_SERVER["HTTP_HOST"]
 
     ];
