@@ -1,17 +1,29 @@
 <?php
+
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json; charset=utf-8');
+    $_DATA = json_decode(file_get_contents("php://input"), true);
+    $_DATA["servidor"] = $_SERVER["HTTP_HOST"];
+    extract($_DATA);
 
 
-    //4. Desarrolle un algoritmo que permita leer dos números y ordenarlos de menor a mayor,si es el caso
+    
+    echo json_encode($_DATA, JSON_PRETTY_PRINT);
 
-    $numeros = [10,3];
- 
-    print_r ($numeros);
-  
-   asort($numeros);
-    print_r ($numeros);
 
+  //$nombre = $_POST['nombre'];
+  //$cedula = $_POST['cedula'];
+ // $horas = $_POST['horas'];
+
+//echo "Mi nombre es $nombre mi cedula $cedula y mi sueldo es $horas.";
+
+
+
+    //5.Desarrolle un algoritmo para la empresa Constructora Tecnovivir Casas C.A., que le permita calcular e"
+    //imprimir la nómina para su cancelación a un total de 50 obreros calificados a quienes debe cancelar por horas
+    //trabajadas. Lahora trabajada se pautó en 30.000 Bolívares
+
+   
 
 
     //$obj = (object) [

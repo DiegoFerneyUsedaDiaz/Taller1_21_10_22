@@ -1,5 +1,14 @@
 addEventListener("DOMContentLoaded", async(e)=>{
-    let peticion = await fetch("api.php");
-    let data = await peticion.text();
-    document.querySelector("#res").innerHTML = data;
+    let form = document.querySelector("#Formulario");
+    form.addEventListener("submit", async(e)=>{
+        e.preventDefault();
+        let json = JSON.stringify(Object.fromEntries(new FormData(e.target)));
+        let config = {
+            method: form.method,
+            body: json
+        };
+        let peticion = await fetch(form.action, config);
+        let data = await peticion.text();
+        document.querySelector("pre").innerHTML = data;
+    })
 })
